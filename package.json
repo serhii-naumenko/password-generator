@@ -1,0 +1,17 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "description": "An app to generate a random password with specified input parameters.",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Serhii Naumenko",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
