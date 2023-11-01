@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Serhii">
+  <meta name="description" content="An app to generate a random password with specified input parameters.">
+  <link rel="icon" type="image/x-ico" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <title>Password generator</title>
+</head>
+<body>
+  <div class="generator--dark" id="generator">
+    <label class="label-mode">
+      Dark
+      <input type="checkbox" id="input-mode" onchange="changeMode(event)">
+      Light
+      <div class="container-mode--dark" id="container-mode">
+        <div id="point-mode" class="point-mode--dark"></div>
+      </div>
+    </label>
+    <h1 class="title--dark" id="title">
+      Generate a <span>random password</span>
+    </h1>
+    <p class="text--dark" id="text">
+      Never use an insecure password again.
+    </p>
+    <legend class="legend--dark" id="legend">
+      Set parameters for password
+      <form class="form">
+        <label class="label label-length">
+          Length of password <span class="minimum">(minimum 6)</span>
+          <input
+            type="number"
+            name="length"
+            id="length-password"
+            value="15"
+            min="6"
+            max="30"
+            onchange="setParametr(event, name)"
+          >
+        </label>
+        <label class="label label-symbols">
+          <input
+            type="checkbox"
+            name="isSymbols"
+            id="use-symbols"
+            checked
+            onchange="setParametr(event, name)"
+            >
+            Use symbols
+          </label>
+          <label class="label label-digets">
+            <input
+            type="checkbox"
+            name="isDigits"
+            id="use-digits"
+            checked
+            onchange="setParametr(event, name)"
+          >
+          Use digets
+        </label>
+      </form>
+    </legend>
+    <button type="button" class="btn" onclick="getRandomPassword()">
+      Generate passwords
+    </button>
+    <div class="divider"></div>
+    <div class="result-container">
+      <p
+        class="result"
+        id="passwordOne"
+        onclick="copyPassword('one')"
+        title="click to copy"
+      ></p>
+      <p
+        class="result"
+        id="passwordTwo"
+        onclick="copyPassword('two')"
+      ></p>
+      <div id="notification">Text copied to clipboard</div>
+    </div>
+  </div>
+</body>
+</html>
